@@ -1,4 +1,4 @@
-class UsersController < Sinatra::Base
+class UsersController < ApplicationController
 
     get '/signup' do
         erb :"users/signup"
@@ -15,7 +15,7 @@ class UsersController < Sinatra::Base
     
     get '/login' do
         if logged_in?
-            redirect "/account"
+            redirect "/gigs"
         else
             erb :"users/login"
         end
@@ -25,26 +25,17 @@ class UsersController < Sinatra::Base
         user = User.find_by(username: params[:username])
         if user && user.authenticate(params[:password])
             session[:user_id] = user.id
-            redirect "/account"
+            redirect "/gigs"
         end  
     end
+
 
     get '/logout' do
         if logged_in?
             session.clear
             redirect "/login"
         else
-            redirect "/account"
-        end
-    end
-
-    get '/account' do
-        if logged_in?
-            @gigs = Gig.all
-            @user = current_user
-            erb :"users/show"    
-        else
-            redirect "/login"    
+            redirect "/gigs"
         end
     end
 end
