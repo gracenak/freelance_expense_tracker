@@ -2,9 +2,9 @@ class CreateGigsTable < ActiveRecord::Migration
   def change
     create_table :gigs do |t|
       t.string :employer
-      t.string :description
       t.date :date
-      t.decimal :payment
+      t.string :description
+      t.decimal :payment, precision: 10, scale: 2
       t.decimal :expenses
       t.integer :user_id
     end

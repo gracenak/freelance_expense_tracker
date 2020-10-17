@@ -15,9 +15,9 @@ ActiveRecord::Schema.define(version: 20201015220242) do
 
   create_table "gigs", force: :cascade do |t|
     t.string  "employer"
-    t.string  "description"
     t.date    "date"
-    t.decimal "payment"
+    t.string  "description"
+    t.decimal "payment",     precision: 10, scale: 2
     t.decimal "expenses"
     t.integer "user_id"
   end

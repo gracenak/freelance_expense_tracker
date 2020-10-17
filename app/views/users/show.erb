@@ -1,9 +1,0 @@
-<h1>Welcome, <%= @user.username %>! </h1>
-<br>
-<h2>Your Gigs:</h2>
-
-<% @user.gigs.each do |gig| %>
-<ul>
-<li><%= gig.employer%></li>
-</ul>
-<% end %>

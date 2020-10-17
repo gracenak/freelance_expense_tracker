@@ -1,0 +1,18 @@
+<h1>Create Gig </h1>
+<form method="POST" action="/gigs">
+<h3>Employer:</h3>
+<input type="text" name="employer" id="employer">
+<h3>Date: </h3>
+<input type="date" name="date" id="date">
+<%# <label for="start">Start Date: </label>
+<input type="date" name="start_date" id="start"> %>
+<%# <label for="end">End Date: </label>
+<input type="date" name="end_date" id="end"> %>
+<h3>Description: </h3>
+<textarea name="description" rows="10" cols="30" id="description"></textarea>
+<h3>Payment: </h3>
+$<input type="text" name="payment" id="payment">
+<h3>Expenses: </h3>
+$<input type="text" name="expenses" id="expenses"><br><br>
+<input type="submit" value="Create Gig">
+</form>
