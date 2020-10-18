@@ -1,3 +1,7 @@
+<% if flash[:error] %>
+<h3 style="color:red;"> <%= flash[:error]%></h3>
+<% end %>
+
 <h1>Create Gig </h1>
 <form method="POST" action="/gigs">
 <h3>Employer:</h3>

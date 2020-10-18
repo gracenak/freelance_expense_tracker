@@ -5,7 +5,8 @@
 <% @user.gigs.each do |gig| %>
 <ul>
 <li><a href="/gigs/<%= gig.id %>"><%= gig.employer%></a></li>
-
+<li><%= gig.date %></li>
+<br><br>
 </ul>
 <% end %>
 <br><br>

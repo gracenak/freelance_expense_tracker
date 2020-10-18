@@ -22,10 +22,12 @@ class GigsController < ApplicationController
     post '/gigs' do
         @user = current_user
         @gig = Gig.create(params)
-        if !params[:employer].empty? && !params[:date].empty? && !params[:description].empty? && !params[:payment].empty? && !params[:expenses].empty?
+        if params[:employer] != "" && params[:date] != "" && params[:description] != "" && params[:payment] != "" && params[:expenses] != ""
             @user.gigs << @gig
+            flash[:message] = "Your gig has been successfully created!"
             redirect "/gigs/#{@gig.id}"
         else
+            flash[:error] = "Gig create failed. Please fill out all inputs"
             redirect "/gigs/new"
         end
     end

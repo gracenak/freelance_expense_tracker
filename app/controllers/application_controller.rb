@@ -6,7 +6,9 @@ class ApplicationController < Sinatra::Base
     set :public_folder, 'public'
     set :views, 'app/views'
     enable :sessions
+    #set a session secret for extra layer of security
     set :session_secret, 'password_security'
+    register Sinatra::Flash
   end
 
   get '/' do
@@ -21,6 +23,8 @@ class ApplicationController < Sinatra::Base
     def current_user
         User.find(session[:user_id])
     end
+
+
   end
 end
 
