@@ -1,6 +1,6 @@
 <h1>Freelance Expense Tracker</h1>
 
-When tax season comes around, are you always scrambling through your inbox of expense receipts, bank statements, and meticulously sifting through emails and your planner to recount the freelance work that you did for that year?
+When tax season comes around, are you always scrambling through your inbox of expense receipts, bank statements, and meticulously sifting through emails and your planner to recount the freelance work that you did?
 
 Here is a handy tool that can be utilized by all freelancers, to keep track of all your gigs and expenses. 
 
@@ -15,20 +15,22 @@ A MVC sinatra application that uses:
     <li> RESTful routes
     <l1> Sessions
     <li> Signup/Login/Logout 
-    <li> ORM - Object Relational Mapping
+    <li> ORM - Object Relational Mapping between Models
         - belongs_to
         - has_many
-    <l1> CRUD functionality:
+    <l1> CRUD functionality on belongs_to instances of a user:
         - Create
         - Read
         - Update
         - Delete
     <li> Helper methods to protect the views of the current_user. Only the logged_in user should be allowed to create, read, update, and delete their own gigs
     <li> Validations
-    <li> Flash error messages
+        - uniqueness of a user's login attributes
+        - input to protect from bad data being persisted into the database
+    <li> Flash messages to display validation failures with error messages, and flash success messages to validate successful signup, logout, as well as successful creation and update of a gig. 
 </ul>
 
-<h2>Instructions</h2>
+<h2>Install Instructions</h2>
 <ul>
     <li> Clone <a href="https://github.com/gracenak/freelance_expense_tracker.git">this repo</a>
     <l1> Run 'bundle install'
