@@ -9,40 +9,31 @@
 <div class="show">
     <div class="show-content">
 
-<h1><%= @gig.employer %></h1>
-<br>
+        <h1><%= @gig.employer %></h1>
+            <br>
 
-<h3>Date: </h3>
-<%= @gig.date %>
-<h3>Description: </h3>
-<%= @gig.description %></h3>
-<h3>Payment: </h3>
-$<%= @gig.payment %>
-<h3>Expenses: </h3>
-$<%= @gig.expenses %>
+        <h3>Date: </h3>
+        <%= @gig.date %>
+        <h3>Description: </h3>
+        <%= @gig.description %></h3>
+        <h3>Payment: </h3>
+        $<%= @gig.payment %>
+        <h3>Expenses: </h3>
+        $<%= @gig.expenses %>
 
-<br><br>
+            <br><br>
 
-<form method="POST" action="/gigs/<%= @gig.id %>">
-    <input type="hidden" id="hidden" name="_method" value="DELETE">
-    <input type="submit" value="Delete Gig">
-</form>
-
-<br>
-
-<form action="/gigs/<%= @gig.id %>/edit">
-    <input type="submit" value="Edit Gig">
-</form>
-<br>
-<form action="/gigs">
-    <input type="submit" value="Home">
-</form>
+        <form method="POST" action="/gigs/<%= @gig.id %>">
+            <input type="hidden" id="hidden" name="_method" value="DELETE">
+            <input type="submit" value="Delete Gig">
+        </form>
+            <br>
+        <form action="/gigs/<%= @gig.id %>/edit">
+            <input type="submit" value="Edit Gig">
+        </form>
+            <br>
+        <form action="/gigs">
+            <input type="submit" value="Home">
+        </form>
+    </div>
 </div>
-</div>
-
-
-
-
-
-
-

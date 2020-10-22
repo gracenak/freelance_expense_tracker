@@ -5,28 +5,20 @@
 
 <div class="index">
     <div class="index-content">
-
-<h1>Welcome, <%= @user.username %>! </h1>
-<br>
-
-<h2>Your Gigs:</h2>
-
-<% @user.gigs.each do |gig| %>
-<a href="/gigs/<%= gig.id %>"><%= gig.employer%></a>
-<p><%= gig.date %></p>
-<br><br>
-<% end %>
-<br>
-<form action="/gigs/new">
-    <input type="submit" value="Create Gig" />
-</form>
-<br>
-<form action="/logout">
-    <input type="submit" value="Log Out">
-</form>
-
-<div class="sidebar">
-<% binding.pry %>
-<% @user.gigs.date %>
-</div>
+        <h1>Welcome, <%= @user.username %>! </h1>
+            <br>
+            <h2>Your Gigs:</h2>
+                <% @user.gigs.each do |gig| %>
+                <a href="/gigs/<%= gig.id %>"><%= gig.employer%></a>
+                <p><%= gig.date %></p>
+                    <br>
+                <% end %>
+            <form action="/gigs/new">
+                <input type="submit" value="Create Gig" />
+            </form>
+             <br>
+            <form action="/logout">
+                <input type="submit" value="Log Out">
+            </form>
+    </div>
 </div>
