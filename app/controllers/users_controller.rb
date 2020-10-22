@@ -7,11 +7,12 @@ class UsersController < ApplicationController
 
     #receive the data [params] from the signup form
     post '/signup' do
-        user = User.create(params)
-        if params[:username] != "" && params[:email] != "" && session[:id] = user.id
-            redirect "/login"
+        user = User.new(username: params[:username], email: params[:email], password: params[:password])
+        if user.save
+            flash[:success] = "You have successfully signed up! Please log in."
+            redirect '/login'
         else
-            flash[:error] = "Invalid credentials. Please try again"
+            flash[:error] = "#{user.errors.full_messages.to_sentence}. Please try again."
             redirect "/signup"
         end
     end
@@ -21,7 +22,7 @@ class UsersController < ApplicationController
         if logged_in?
             redirect "/gigs"    
         else
-            erb :"users/login"
+            erb  :"/users/login"
         end
     end
 
@@ -32,7 +33,7 @@ class UsersController < ApplicationController
             session[:user_id] = user.id
             redirect "/gigs"
         else
-            flash[:error] = "Invalid login credentials. Please try again!"
+            flash[:error] = "Invalid credentials. Please try again"
             redirect "/login"
         end  
     end
@@ -41,6 +42,7 @@ class UsersController < ApplicationController
     get '/logout' do
         if logged_in?
             session.clear
+            flash[:message] = "You have successfully logged out. See you next time!"
             redirect "/"
         else
             redirect "/gigs"

@@ -1,22 +1,32 @@
-<div class="container">
-  <header><img src="images/corneal-small.png" class="img-responsive main-image"></header>
-  <div class="col-md-8 col-md-offset-2">
-    <h2>Welcome to Freelance Expense Tracker!</h2>
-  
-  
-    <div class="content">
+<% if flash[:message] %>
+<h3 style="color: DarkOliveGreen;"><%= flash[:message] %></h3>
+<% end %>
 
-      
-      
-      <form action="/signup">
-        First time user?    <input type="submit" value="Sign Up">
-      </form>
-<br>
+ <div class="container">
+  <%# <img src="../images/Freelancehomepage.jpg" alt="Homepage" > %>
+  <%# <header><img src="../images/Freelancehomepage.jpg" class="img-responsive main-image"></header> %>
+
+    <div class="centered">
+      <header><h1>Welcome to Freelance Expense Tracker!</h1></header>
+      <br><br>
     
-      <form action="/login">
-        Welcome Back!    <input type="submit" value="Log In">
+      <form action="/signup">
+        <label for="signup"><h3>First time user?</h3></label>
+       
+          <input type="submit" value="Sign Up">
       </form>
-      
-    </div>
+
+      <br>
+
+      <form action="/login">
+        <label for="login"><h3>Already a member?</h3></label>    
+          <input type="submit" value="Log In">
+      </form>
+
+    
   </div>
 </div>
+
+
+
+

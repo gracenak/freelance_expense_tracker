@@ -1,115 +1,308 @@
-@media screen {
-  /* --- Reset Styles --- */
-  * {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Oswald:wght@200&display=swap" rel="stylesheet");
+/* --- Welcome Page Styles --- */
+body {
+  background-color:#F6F1F0;
+  color: #808080;
+  font-family:'Montserrat', sans-serif;
+  line-height: 18px;
+}
 
-  html, body {
+/* .wrapper {
+  background: #fff;
+  -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
+  box-shadow: 0 0 10px rgba(0,0,0,.3);
+  margin: 16px auto;
+  max-width: 960px;
+  padding: 2.25%; /* 18px / 800px */
+  /* width: 85%;
+} */ */
+
+h1 {
+  font-family: "Oswald", Sans-serif;
+  font-weight: 400;
+  letter-spacing: 2px;
+  background-color: #F5F5F5;
+  color: black;
+  border-bottom: 3px solid #ccc;
+  font-size: 36px;
+  line-height: 54px;
+}
+
+h2 {
+  border-bottom: 2px solid #ccc;
+  font-size: 24px;
+  line-height: 36px;
+  margin-bottom: 16px;
+}
+
+h3 {
+  
+  font-size: 18px;
+  line-height: 36px;
+}
+
+p {
+  margin-bottom: 18px;
+}
+
+.main {
+  overflow: hidden;
+}
+
+.main-image {
+  height: 800px;  
+  background-size: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.content {
+  float: left;
+  width: 60%; /* 480px / 800px */
+}
+
+.sidebar {
+  background: #eee;
+  border: 1px solid #ccc;
+  float: right;
+  padding: 2.08333333333%; /* 5px / 240px */
+  width: 30%; /* 240px / 800px */
+}
+
+.sidebar ul {
+  font-size: 14px;
+}
+
+.branding {
+  clear: both;
+}
+
+/* footer.branding {
+  border-top: 2px solid #ccc;
+  margin-top: 20px;
+  padding-top: 20px;
+} */
+
+
+/* @media screen and (max-width: 1200px) { */
+/* .wrapper {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  width: auto;
+} */
+
+/* .content, .sidebar {
+  float: none;
+  width: 100%;
+} */
+
+/* .sidebar {
+  background: transparent;
+  border: none;
+  border-top: 2px solid #ccc;
+  padding: 0;
+} */
+/* 
+h1 {
+  font-size: 24px;
+  line-height: 36px;
+} */
+
+/* h2 {
+  font-size: 18px;
+  line-height: 24px;
+} */
+
+/* .welcome-bg{  
+  background: url("../images/Freelancehomepage.jpg") no-repeat right top;  
+  height: 800px;  
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  color: white;
+
+} */
+
+/* .col-md-offset-2{
+  font-family: 'Poppins', sans-serif;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+} */
+
+
+
+.container {
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  border: none;
+  border-top: 2px solid #ccc;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+}
+
+.container { 
+  /* The image used */
+  background-image: url("../images/Musicfreelance.jpg"); 
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  text-align: center;
+  color: white;
+  
+} 
+
+.login {
+    /* The image used */
+    background-image: url("../images/Freelancehomepage.jpg"); 
+
+    /* Full height */
     height: 100%;
-    width: 100%;
-  }
-
-  /* --- Welcome Page Styles --- */
-  body {
-    background-color: lightblue;
-    color: #333;
-    font-family: Sans-Serif;
-    line-height: 18px;
-  }
-
-  .wrapper {
-    background: #fff;
-    -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
-    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
-    box-shadow: 0 0 10px rgba(0,0,0,.3);
-    margin: 16px auto;
-    max-width: 960px;
-    padding: 2.25%; /* 18px / 800px */
-    width: 85%;
-  }
-
-  h1 {
-    font-size: 36px;
-    line-height: 54px;
-  }
-
-  h2 {
-    border-bottom: 2px solid #ccc;
-    font-size: 24px;
-    line-height: 36px;
-    margin-bottom: 16px;
-  }
-
-  h3 {
-    font-size: 18px;
-    line-height: 36px;
-  }
-
-  p {
-    margin-bottom: 18px;
-  }
-
-  .main {
-    overflow: hidden;
-  }
-
-  .content {
-    float: left;
-    width: 60%; /* 480px / 800px */
-  }
-
-  .sidebar {
-    background: #eee;
-    border: 1px solid #ccc;
-    float: right;
-    padding: 2.08333333333%; /* 5px / 240px */
-    width: 30%; /* 240px / 800px */
-  }
-
-  .sidebar ul {
-    font-size: 14px;
-  }
-
-  .branding {
-    clear: both;
-  }
-
-  footer.branding {
-    border-top: 2px solid #ccc;
-    margin-top: 20px;
-    padding-top: 20px;
-  }
+  
+    /* Center and scale the image nicely */
+    background-position: top; 
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-@media screen and (max-width: 600px) {
-  .wrapper {
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    width: auto;
-  }
+.signup {
+  background-image: url("../images/Freelancehomepage.jpg");
+  height: 100%;
+  background-position: top; 
+  background-repeat: no-repeat;
+  background-size: cover;
 
-  .content, .sidebar {
-    float: none;
-    width: 100%;
-  }
-
-  .sidebar {
-    background: transparent;
-    border: none;
-    border-top: 2px solid #ccc;
-    padding: 0;
-  }
-
-  h1 {
-    font-size: 24px;
-    line-height: 36px;
-  }
-
-  h2 {
-    font-size: 18px;
-    line-height: 24px;
-  }
 }
+
+.index {
+  background-image: url("../images/background.jpeg");
+  background-size: cover;
+  padding: 200px;
+}
+
+.index-content {
+
+  font-family: 'Oswald', sans-serif;
+  position: relative;
+  text-align: center;
+  color: 808080;
+  
+}
+
+.create {
+  background-image: url("../images/background.jpeg");
+  background-size: cover;
+  padding: 200px;
+}
+
+.create-content {
+  font-family: 'Oswald', sans-serif;
+  position: relative;
+  text-align: center;
+  color: 808080;
+
+}
+
+.show {
+  background-image: url("../images/background.jpeg");
+  background-size: cover;
+  padding: 200px;
+}
+
+.show-content {
+  font-family: 'Oswald', sans-serif;
+  position: relative;
+  text-align: center;
+  color: 808080;
+}
+
+.edit {
+  background-image: url("../images/background.jpeg");
+  background-size: cover;
+  padding: 200px;
+
+}
+
+.edit-content {
+  font-family: 'Oswald', sans-serif;
+  position: relative;
+  text-align: center;
+  color: 808080;
+
+}
+
+
+
+
+<!DOCTYPE html>
+<html>
+<style>
+input[type=text] {
+  font-family: "Oswald", Sans-serif;
+  font-size: 13px;
+  font-weight: 400; 
+  line-height: 1em;
+  letter-spacing: 2px;
+  background-color: #F5F5F5;
+  color: black;
+  border-radius: 0px 0px 0px 0px;
+  padding: 14px 15px 16px 15px;
+}
+
+
+
+
+
+
+input[type=submit] {
+  font-family: "Oswald", Sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1em;
+  letter-spacing: 2px;
+  background-color: #F5F5F5;
+  color: black;
+  border-radius: 0px 0px 0px 0px;
+  padding: 14px 15px 16px 15px;
+  cursor: pointer;
+}
+
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+<body>
+
+

@@ -6,7 +6,7 @@ class GigsController < ApplicationController
             @user = current_user
             erb :"gigs/index"  
         else
-            redirect "/login"    
+            redirect "/"    
         end
     end
 
@@ -15,19 +15,20 @@ class GigsController < ApplicationController
             @user = current_user
             erb :"gigs/new"
         else
+            flash[:warning] = "You must be logged in to create a gig. Please log in!"
             redirect "/login"
         end
     end
 
     post '/gigs' do
         @user = current_user
-        @gig = Gig.create(params)
-        if params[:employer] != "" && params[:date] != "" && params[:description] != "" && params[:payment] != "" && params[:expenses] != ""
+        @gig = Gig.new(employer: params[:employer], date: params[:date], description: params[:description], payment: params[:payment], expenses: params[:expenses])
+        if @gig.save
             @user.gigs << @gig
-            flash[:message] = "Your gig has been successfully created!"
+            flash[:message1] = "Your gig has been successfully created!"
             redirect "/gigs/#{@gig.id}"
         else
-            flash[:error] = "Gig create failed. Please fill out all inputs"
+            flash[:error] = "Gig creation failed. #{@gig.errors.full_messages.to_sentence}"
             redirect "/gigs/new"
         end
     end
@@ -37,8 +38,8 @@ class GigsController < ApplicationController
             @gig = Gig.find(params[:id])
             @user = current_user
             erb :"gigs/show"
-    
         else
+            flash[:alert] = "You must be logged in to view this gig. Please log in!"
             redirect "/login"
         end
     end
@@ -48,6 +49,7 @@ class GigsController < ApplicationController
             @gig = Gig.find(params[:id])
             erb :"gigs/edit"
         else
+            flash[:message] = "You must be logged in to edit this gig. Please log in!"
             redirect "/login"
         end
     end
@@ -57,9 +59,10 @@ class GigsController < ApplicationController
             @gig = Gig.find(params[:id])
     
             @gig.update(date: params[:date], description: params[:description], payment: params[:payment], expenses: params[:expenses]) if current_user == @gig.user
-           
+            flash[:success] = "Your gig has been updated!"
             redirect "/gigs/#{@gig.id}"
         else
+            flash[:error] = "#{@gig.errors.full_messages.to_sentence}"
             redirect "/login"
         end
     end
@@ -67,6 +70,7 @@ class GigsController < ApplicationController
     delete '/gigs/:id' do
         @gig = Gig.find(params[:id])
         @gig.delete
+        flash[:message] = "Your gig has been deleted."
         redirect "/gigs"
     end
 

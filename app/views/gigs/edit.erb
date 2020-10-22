@@ -1,3 +1,6 @@
+<div class="edit">
+    <div class="edit-content">
+
 <h1>Edit Gig </h1>
 <form method="POST" action="/gigs/<%= @gig.id %>">
 <input type="hidden" id="hidden" name="_method" value="PATCH">
@@ -12,3 +15,5 @@ $<input type="text" name="payment" id="payment" value="<%= @gig.payment %>">
 $<input type="text" name="expenses" id="expenses" value="<%= @gig.expenses %>"><br><br>
 <input type="submit" value="Update Gig">
 </form>
+</div>
+</div>

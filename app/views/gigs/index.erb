@@ -1,16 +1,24 @@
+<% if flash[:message] %>
+<h3 style="color:DarkOliveGreen;"><%= flash[:message] %></h3> 
+<% end %>
+
+<div class="index">
+    <div class="index-content">
+
+
 <h1>Welcome, <%= @user.username %>! </h1>
 <br>
+
 <h2>Your Gigs:</h2>
 
 <% @user.gigs.each do |gig| %>
 <ul>
-<li><a href="/gigs/<%= gig.id %>"><%= gig.employer%></a></li>
-<li><%= gig.date %></li>
+<a href="/gigs/<%= gig.id %>"><%= gig.employer%></a></li>
+<p><%= gig.date %></p>
 <br><br>
 </ul>
 <% end %>
-<br><br>
-
+<br>
 <form action="/gigs/new">
     <input type="submit" value="Create Gig" />
 </form>
@@ -18,3 +26,5 @@
 <form action="/logout">
     <input type="submit" value="Log Out">
 </form>
+</div>
+</div>

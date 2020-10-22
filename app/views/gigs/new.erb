@@ -1,6 +1,10 @@
 <% if flash[:error] %>
-<h3 style="color:red;"> <%= flash[:error]%></h3>
+<h3 style="color:DarkRed;"> <%= flash[:error]%></h3>
 <% end %>
+
+<div class="create">
+    <div class="create-content">
+
 
 <h1>Create Gig </h1>
 <form method="POST" action="/gigs">
@@ -20,3 +24,5 @@ $<input type="text" name="payment" id="payment">
 $<input type="text" name="expenses" id="expenses"><br><br>
 <input type="submit" value="Create Gig">
 </form>
+</div>
+</div>

@@ -1,6 +1,22 @@
-<% if flash[:error] %>
-<h3 style="color:red;"><%= flash[:error] %></h3> 
+<% if flash[:success] %>
+<h3 style="color:DarkOliveGreen;"><%= flash[:success] %></h3>
+
+<% elsif flash[:error] %>
+<h3 style="color:DarkRed;"><%= flash[:error] %></h3> 
+
+
+<% elsif flash[:warning] %>
+<h3 style="color:DarkRed;"><%= flash[:warning] %></h3> 
+
+
+<% else flash[:alert] %>
+<h3 style="color:DarkRed;"><%= flash[:alert] %></h3> 
+
 <% end %>
+
+<div class="login">
+    <%# <img src="../images/Musicfreelance.jpg" alt="login_image"> %>
+    <div class="login-centered">
 
 
 <h1>Log In</h1>
@@ -11,3 +27,5 @@
     <input type="password" name="password" id="password">
     <input type="submit" value="Log In">
 </form>
+</div>
+</div>
