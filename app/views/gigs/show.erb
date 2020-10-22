@@ -1,6 +1,10 @@
-<% if flash[:message] %>
+<% if flash[:message1] %>
+<h3 style="color:DarkOliveGreen;"> <%= flash[:message1] %></h3>
+
+<% elsif flash[:success] %>
 <h3 style="color:DarkOliveGreen;"> <%= flash[:success] %></h3>
 <% end %>
+
 
 <div class="show">
     <div class="show-content">
