@@ -1,3 +1,5 @@
+# Specifications for the Sinatra Assessment
+
 Specs:
 - [x] Use Sinatra to build the app
 - [x] Use ActiveRecord for storing information in a database
