@@ -37,3 +37,9 @@ A MVC sinatra application that uses:
     <li> Start running the server with 'shotgun' and visit <a href="https://http://localhost:9393/"></a> to visit the homepage.
     <li> Enjoy!
 </ul>
+
+<h2>Contributor's Guide </h2>
+The Freelance Sinatra Expense Tracker is dedicated to bringing a welcoming, harrassment free, working environment. Please see the <a href="https://www.contributor-covenant.org/version/2/0/code_of_conduct/">Contributer Covenant Conduct of Code</a>.
+
+<h2>License</h2>
+This application is available as open source under the terms of the <a href="https://opensource.org/licenses/MIT">MIT License</a>.
