@@ -32,8 +32,8 @@ A MVC sinatra application that uses:
 
 <h2>Install Instructions</h2>
 <ul>
-    <li> Clone <a href="https://github.com/gracenak/freelance_expense_tracker.git">this repo</a> in your environment.
-    <l1> Run 'bundle install'
+    <li> Clone <a href="https://github.com/gracenak/freelance_expense_tracker.git">this repo</a>.
+    <li> Run 'bundle install'
     <li> Run 'rake db:migrate' # migrates the tables into the database
     <li> Run 'rake db:seed'    # migrates this seed file containing initial data to test the application with
     <li> Start running the server with 'shotgun' and visit <a href="https://http://localhost:9393/"></a> to visit the homepage.
