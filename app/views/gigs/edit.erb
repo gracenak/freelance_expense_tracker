@@ -1,19 +1,18 @@
 <div class="edit">
     <div class="edit-content">
 
-<h1>Edit Gig </h1>
-<form method="POST" action="/gigs/<%= @gig.id %>">
-<input type="hidden" id="hidden" name="_method" value="PATCH">
-<h3>Date: </h3>
-<input type="date" name="date" id="date" value="<%= @gig.date %>">
-<h3>Description: </h3>
-
-<textarea name="description" rows="10" cols="30" id="description"><%= @gig.description %></textarea>
-<h3>Payment: </h3>
-$<input type="text" name="payment" id="payment" value="<%= @gig.payment %>">
-<h3>Expenses: </h3>
-$<input type="text" name="expenses" id="expenses" value="<%= @gig.expenses %>"><br><br>
-<input type="submit" value="Update Gig">
-</form>
-</div>
+        <h1>Edit Gig </h1>
+            <form method="POST" action="/gigs/<%= @gig.id %>">
+                <input type="hidden" id="hidden" name="_method" value="PATCH">
+        <h3>Date: </h3>
+                <input type="date" name="date" id="date" value="<%= @gig.date %>">
+        <h3>Description: </h3>
+                <textarea name="description" rows="10" cols="30" id="description"><%= @gig.description %></textarea>
+        <h3>Payment: </h3>
+                $<input type="text" name="payment" id="payment" value="<%= @gig.payment %>">
+        <h3>Expenses: </h3>
+                $<input type="text" name="expenses" id="expenses" value="<%= @gig.expenses %>"><br><br>
+                <input type="submit" value="Update Gig">
+            </form>
+    </div>
 </div>
