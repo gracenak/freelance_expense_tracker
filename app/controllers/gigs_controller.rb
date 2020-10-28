@@ -2,7 +2,6 @@ class GigsController < ApplicationController
 
     get '/gigs' do
         if logged_in?
-            @gigs = Gig.all
             @user = current_user
             erb :"gigs/index"  
         else
@@ -28,7 +27,6 @@ class GigsController < ApplicationController
             flash[:message1] = "Your gig has been successfully created!"
             redirect "/gigs/#{@gig.id}"
         else
-            binding.pry
             flash[:error] = "Gig creation failed. #{@gig.errors.full_messages.to_sentence}"
             redirect "/gigs/new"
         end
@@ -40,7 +38,7 @@ class GigsController < ApplicationController
             @user = current_user
             erb :"gigs/show"
         else
-            flash[:alert] = "You are not authorized to view this gig!"
+            flash[:alert] = "You are not authorized to view this gig."
             redirect "/login"
         end
     end
