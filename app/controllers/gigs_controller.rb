@@ -28,28 +28,29 @@ class GigsController < ApplicationController
             flash[:message1] = "Your gig has been successfully created!"
             redirect "/gigs/#{@gig.id}"
         else
+            binding.pry
             flash[:error] = "Gig creation failed. #{@gig.errors.full_messages.to_sentence}"
             redirect "/gigs/new"
         end
     end
 
     get '/gigs/:id' do
-        if logged_in?
+        if logged_in? 
             @gig = Gig.find(params[:id])
             @user = current_user
             erb :"gigs/show"
         else
-            flash[:alert] = "You must be logged in to view this gig. Please log in!"
+            flash[:alert] = "You are not authorized to view this gig!"
             redirect "/login"
         end
     end
 
     get '/gigs/:id/edit' do
-        if logged_in?
-            @gig = Gig.find(params[:id])
+        @gig = Gig.find(params[:id]) 
+        if current_user == @gig.user
             erb :"gigs/edit"
         else
-            flash[:message] = "You must be logged in to edit this gig. Please log in!"
+            flash[:message] = "You are not authorized to edit this gig."
             redirect "/login"
         end
     end

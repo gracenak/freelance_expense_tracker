@@ -1,8 +1,9 @@
 <% if flash[:message1] %>
 <h3 style="color:DarkOliveGreen;"> <%= flash[:message1] %></h3>
 
-<% elsif flash[:success] %>
+<% else flash[:success] %>
 <h3 style="color:DarkOliveGreen;"> <%= flash[:success] %></h3>
+
 <% end %>
 
 
@@ -24,16 +25,16 @@
             <br><br>
 
         <form method="POST" action="/gigs/<%= @gig.id %>">
-            <input type="hidden" id="hidden" name="_method" value="DELETE">
-            <input type="submit" value="Delete Gig">
+        <input type="hidden" id="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Delete Gig">
         </form>
             <br>
         <form action="/gigs/<%= @gig.id %>/edit">
-            <input type="submit" value="Edit Gig">
+        <input type="submit" value="Edit Gig">
         </form>
             <br>
         <form action="/gigs">
-            <input type="submit" value="Home">
+        <input type="submit" value="Home">
         </form>
     </div>
 </div>
