@@ -21,9 +21,8 @@ class GigsController < ApplicationController
 
     post '/gigs' do
         @user = current_user
-        @gig = Gig.new(employer: params[:employer], date: params[:date], description: params[:description], payment: params[:payment], expenses: params[:expenses])
+        @gig = @user.gigs.build(employer: params[:employer], date: params[:date], description: params[:description], payment: params[:payment], expenses: params[:expenses])
         if @gig.save
-            @user.gigs << @gig
             flash[:message1] = "Your gig has been successfully created!"
             redirect "/gigs/#{@gig.id}"
         else
@@ -33,9 +32,8 @@ class GigsController < ApplicationController
     end
 
     get '/gigs/:id' do
-        if logged_in? 
-            @gig = Gig.find(params[:id])
-            @user = current_user
+        @gig = Gig.find(params[:id])
+        if current_user == @gig.user 
             erb :"gigs/show"
         else
             flash[:alert] = "You are not authorized to view this gig."
@@ -68,7 +66,7 @@ class GigsController < ApplicationController
 
     delete '/gigs/:id' do
         @gig = Gig.find(params[:id])
-        @gig.delete
+        @gig.delete if current_user == @gig.user
         flash[:message] = "Your gig has been deleted."
         redirect "/gigs"
     end

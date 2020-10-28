@@ -1,5 +1,8 @@
 <% if flash[:message] %>
 <h3 style="color:DarkRed;"><%= flash[:message] %></h3> 
+
+<% else flash[:alert] %>
+<h3 style="color:DarkRed;"><%= flash[:alert] %></h3> 
 <% end %>
 
 

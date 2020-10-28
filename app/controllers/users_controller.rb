@@ -1,11 +1,9 @@
 class UsersController < ApplicationController
 
-    #render signup form
     get '/signup' do
         erb :"users/signup"
     end
 
-    #receive the data [params] from the signup form
     post '/signup' do
         user = User.new(username: params[:username], email: params[:email], password: params[:password])
         if user.save
@@ -17,7 +15,6 @@ class UsersController < ApplicationController
         end
     end
     
-    #render login form
     get '/login' do
         if logged_in?
             redirect "/gigs"    
