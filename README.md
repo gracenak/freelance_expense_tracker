@@ -6,7 +6,7 @@ Here is a handy tool that can be utilized by all freelancers, to keep track of a
 
 This sinatra application was created as a project requirement for the <a href="https://flatironschool.com/career-courses/coding-bootcamp/online">Flatiron Online Software Engineering Program</a>.
 
-For more information, check out <a href="https://gracenak.github.io/creating_a_sinatra_application">my blog</a> and a <a href="https://www.youtube.com/watch?v=fh4oVLbV48w">walkthrough demonstration of this project</a>.
+For more information, check out <a href="https://gracenak.github.io/creating_a_sinatra_application">my blog</a> and a <a href="https://www.youtube.com/watch?v=fh4oVLbV48w">walkthrough demonstration</a> of this project.
 
 A MVC sinatra application that uses:
 <ul>
