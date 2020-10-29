@@ -52,10 +52,9 @@ class GigsController < ApplicationController
     end
 
     patch '/gigs/:id' do
-        if logged_in?
-            @gig = Gig.find(params[:id])
-    
-            @gig.update(date: params[:date], description: params[:description], payment: params[:payment], expenses: params[:expenses]) if current_user == @gig.user
+        @gig = Gig.find(params[:id])
+        if authorized_to_modify?(@gig)
+            @gig.update(date: params[:date], description: params[:description], payment: params[:payment], expenses: params[:expenses]) 
             flash[:success] = "Your gig has been updated!"
             redirect "/gigs/#{@gig.id}"
         else
@@ -66,9 +65,13 @@ class GigsController < ApplicationController
 
     delete '/gigs/:id' do
         @gig = Gig.find(params[:id])
-        @gig.delete if current_user == @gig.user
-        flash[:message] = "Your gig has been deleted."
-        redirect "/gigs"
+        if authorized_to_modify?(@gig)
+            @gig.delete 
+            flash[:message] = "Your gig has been deleted."
+            redirect "/gigs"
+        else
+            redirect to "/login"
+        end
     end
 
 end
