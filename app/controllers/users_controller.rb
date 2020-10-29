@@ -26,9 +26,9 @@ class UsersController < ApplicationController
     post '/login' do
         user = User.find_by(username: params[:username])
         if user && user.authenticate(params[:password])
-            #creating a key/value pair in the sessions hash using the users id to log them in
             session[:user_id] = user.id
             redirect "/gigs"
+            binding.pry
         else
             flash[:error] = "Invalid credentials. Please try again"
             redirect "/login"
