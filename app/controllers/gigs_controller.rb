@@ -43,7 +43,7 @@ class GigsController < ApplicationController
 
     get '/gigs/:id/edit' do
         @gig = Gig.find(params[:id]) 
-        if current_user == @gig.user
+        if authorized_to_modify?(@gig)
             erb :"gigs/edit"
         else
             flash[:message] = "You are not authorized to edit this gig."
